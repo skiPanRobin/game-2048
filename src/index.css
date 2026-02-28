@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tile animations */
+@keyframes tile-appear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tile-pop {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tile-appear {
+  animation: tile-appear 150ms ease-in-out;
+}
+
+.tile-pop {
+  animation: tile-pop 200ms ease-in-out;
+}
+
+.tile {
+  transition: left 150ms ease-in-out, top 150ms ease-in-out;
+}
+
+:root {
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #776e65;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Prevent mobile scrolling */
+  overscroll-behavior: none;
+}
+
+html {
+  overscroll-behavior: none;
+  overflow: hidden;
+  touch-action: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #faf8ef;
+  overscroll-behavior: none;
+  overflow: hidden;
+  touch-action: none;
+}
+
+#root {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
